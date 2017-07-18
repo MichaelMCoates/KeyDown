@@ -1,0 +1,20 @@
+{
+  "name": "Touchtone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "touchtone.js",
+  "scripts": {
+    "webpack": "webpack --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "animejs": "^2.0.2",
+    "webpack": "^3.3.0",
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1"
+  }
+}
