@@ -106,6 +106,7 @@ class DomNodeCollection {
 
     this.each((node) => {
       node.addEventListener(eventType, callback);
+      console.log(node);
 
       if (node[eventStore] === "undefined") {
         node[eventStore] = [];

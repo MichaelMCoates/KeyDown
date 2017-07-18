@@ -1,59 +1,59 @@
 import anime from 'animejs';
-import $ from "jquery";
-
 
 let topLeftKeys = {
-  "1": true,
-  "2": true,
-  "3": true,
-  "4": true,
-  "5": true,
-  "q": true,
-  "w": true,
-  "e": true,
-  "r": true,
-  "t": true,
+  "1": "Top Left",
+  "2": "Top Left",
+  "3": "Top Left",
+  "4": "Top Left",
+  "5": "Top Left",
+  "q": "Top Left",
+  "w": "Top Left",
+  "e": "Top Left",
+  "r": "Top Left",
+  "t": "Top Left",
 };
 
 let topRightKeys = {
-  "6": true,
-  "7": true,
-  "8": true,
-  "9": true,
-  "0": true,
-  "y": true,
-  "u": true,
-  "i": true,
-  "o": true,
-  "p": true,
+  "6": "Top Right",
+  "7": "Top Right",
+  "8": "Top Right",
+  "9": "Top Right",
+  "0": "Top Right",
+  "y": "Top Right",
+  "u": "Top Right",
+  "i": "Top Right",
+  "o": "Top Right",
+  "p": "Top Right",
 };
 
 let bottomLeftKeys = {
-  "a": true,
-  "s": true,
-  "d": true,
-  "f": true,
-  "g": true,
-  "z": true,
-  "x": true,
-  "c": true,
-  "v": true,
-  "b": true,
+  "a": "Bottom Left",
+  "s": "Bottom Left",
+  "d": "Bottom Left",
+  "f": "Bottom Left",
+  "g": "Bottom Left",
+  "z": "Bottom Left",
+  "x": "Bottom Left",
+  "c": "Bottom Left",
+  "v": "Bottom Left",
+  "b": "Bottom Left",
 };
 
 let bottomRightKeys = {
-  "h": true,
-  "j": true,
-  "k": true,
-  "l": true,
-  ";": true,
-  "n": true,
-  "m": true,
-  ",": true,
-  ".": true,
-  "/": true,
+  "h": "Bottom Right",
+  "j": "Bottom Right",
+  "k": "Bottom Right",
+  "l": "Bottom Right",
+  ";": "Bottom Right",
+  "n": "Bottom Right",
+  "m": "Bottom Right",
+  ",": "Bottom Right",
+  ".": "Bottom Right",
+  "/": "Bottom Right",
 };
 
+let keymap = $wis.extend(topLeftKeys, topRightKeys, bottomLeftKeys, bottomRightKeys);
+console.log(keymap);
 
 window.human = false;
 
@@ -75,53 +75,29 @@ function setCanvasSize() {
   canvasEl.getContext('2d').scale(2, 2);
 }
 
-function topLeft(key) {
-
-  if (topLeftKeys[key]) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
 function setSection(key) {
-  if (topLeftKeys[key]) {
-    section = "Top Left";
-  } else if (topRightKeys[key]) {
-    section = "Top Right";
-  } else if (bottomLeftKeys[key]) {
-    section = "Bottom Left";
-  } else if (bottomRightKeys[key]) {
-    section = "Bottom Right";
-  }
+  section = keymap[key];
 }
 
 function setCoords() {
   let width = window.innerWidth;
   let height = window.innerHeight;
+  let topY = Math.random() * height / 2;
+  let bottomY = Math.random() * (height - height / 2) + height / 2;
+  let leftX = Math.random() * width / 2;
+  let rightX = Math.random() * (width - width / 2) + width / 2;
+
   switch (section) {
     case "Top Left":
-      return [
-        Math.random() * width / 2,
-        Math.random() * height / 2
-      ];
+      return [leftX, topY];
     case "Top Right":
-      return [
-        Math.random() * (width - width / 2) + width / 2,
-        Math.random() * height / 2
-      ];
+      return [rightX, topY];
     case "Bottom Left":
-      return [
-        Math.random() * width / 2,
-        Math.random() * (height - height / 2) + height / 2
-      ];
+      return [leftX, bottomY];
     case "Bottom Right":
-      return [
-        Math.random() * (width - width / 2) + width / 2,
-        Math.random() * (height - height / 2) + height / 2
-      ];
+      return [rightX, bottomY];
     default:
-
+      return [pointerX, pointerY];
   }
 }
 
@@ -225,7 +201,7 @@ var render = anime({
   }
 });
 
-$wis('html').on('keydown', function(e) {
+$wis('html').keydown(function(e) {
   window.human = true;
   render.play();
   setSection(e.key);
