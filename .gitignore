@@ -1,8 +1,4 @@
-// .gitignore
 
-// ... a bunch of preloaded ignores
-
-// To add:
 node_modules/
 bundle.js
 bundle.js.map
