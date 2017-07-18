@@ -53,25 +53,20 @@ let bottomRightKeys = {
 };
 
 let keymap = $wis.extend(topLeftKeys, topRightKeys, bottomLeftKeys, bottomRightKeys);
-console.log(keymap);
-
-window.human = false;
 
 var canvasEl = $wis('.fireworks').first();
-console.log(canvasEl);
 var ctx = canvasEl.getContext('2d');
 var numberOfParticules = 30;
 var pointerX = 0;
 var pointerY = 0;
 var section = "";
-var tap = ('ontouchstart' in window || navigator.msMaxTouchPoints) ? 'touchstart' : 'mousedown';
 var colors = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C'];
 
 function setCanvasSize() {
   canvasEl.width = window.innerWidth * 2;
   canvasEl.height = window.innerHeight * 2;
   canvasEl.style.width = window.innerWidth + 'px';
-  canvasEl.style.height = window.innerHeight + 'px';
+  canvasEl.style.height = window.innerHeight * 0.995 + 'px';
   canvasEl.getContext('2d').scale(2, 2);
 }
 
@@ -202,7 +197,6 @@ var render = anime({
 });
 
 $wis('html').keydown(function(e) {
-  window.human = true;
   render.play();
   setSection(e.key);
   updateCoords(e);
@@ -213,16 +207,16 @@ $wis('html').keydown(function(e) {
 
 var centerX = window.innerWidth / 2;
 var centerY = window.innerHeight / 2;
-
-function autoClick() {
-  if (window.human) return;
-  animateParticules(
-    anime.random(centerX-50, centerX+50),
-    anime.random(centerY-50, centerY+50)
-  );
-  anime({duration: 200}).finished.then(autoClick);
-}
-
-autoClick();
+//
+// function autoClick() {
+//   if (window.human) return;
+//   animateParticules(
+//     anime.random(centerX-50, centerX+50),
+//     anime.random(centerY-50, centerY+50)
+//   );
+//   anime({duration: 200}).finished.then(autoClick);
+// }
+//
+// autoClick();
 setCanvasSize();
 window.addEventListener('resize', setCanvasSize, false);
