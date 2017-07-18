@@ -1,4 +1,6 @@
 import anime from 'animejs';
+import $ from "jquery";
+
 
 let topLeftKeys = {
   "1": true,
@@ -55,7 +57,8 @@ let bottomRightKeys = {
 
 window.human = false;
 
-var canvasEl = document.querySelector('.fireworks');
+var canvasEl = $wis('.fireworks').first();
+console.log(canvasEl);
 var ctx = canvasEl.getContext('2d');
 var numberOfParticules = 30;
 var pointerX = 0;
@@ -222,13 +225,15 @@ var render = anime({
   }
 });
 
-document.addEventListener('keydown', function(e) {
+$wis('html').on('keydown', function(e) {
   window.human = true;
   render.play();
   setSection(e.key);
   updateCoords(e);
   animateParticules(pointerX, pointerY);
-}, false);
+});
+
+
 
 var centerX = window.innerWidth / 2;
 var centerY = window.innerHeight / 2;
