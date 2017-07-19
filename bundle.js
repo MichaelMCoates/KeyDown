@@ -492,12 +492,11 @@ var bottomRightKeys = {
 };
 
 var soundKeymap = $wis.extend(topLeftKeys, topRightKeys, bottomLeftKeys, bottomRightKeys);
-// 
-// for (var key in soundKeymap) {
-//   let audio = document.createElement("audio");
-//   audio.src = soundKeymap[key];
-//   $wis('head').append(audio);
-// }
+
+for (var key in soundKeymap) {
+  console.log(soundKeymap[key]);
+  new _howler.Howl({ src: ["" + soundKeymap[key]] });
+}
 
 function playSound(key) {
   new _howler.Howl({ src: ["" + soundKeymap[key]] }).play();
