@@ -2,10 +2,10 @@
   "name": "Touchtone",
   "version": "1.0.0",
   "description": "",
-  "main": "touchtone.js",
+  "main": "keydown.js",
   "scripts": {
     "webpack": "webpack --watch",
-    "start": "node keydown.js"
+    "start": ""
   },
   "keywords": [],
   "author": "",
