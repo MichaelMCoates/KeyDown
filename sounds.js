@@ -1,7 +1,7 @@
 import { Howl } from 'howler';
 
 const topLeftKeys = {
-  "1": 'https://s3.amazonaws.com/keydown-pro/percs1.mp3',
+  "1": "https://s3.amazonaws.com/keydown-pro/percs1.mp3",
   "2": "https://s3.amazonaws.com/keydown-pro/percs2.wav",
   "3": "https://s3.amazonaws.com/keydown-pro/percs3.mp3",
   "4": "https://s3.amazonaws.com/keydown-pro/percs4.mp3",
