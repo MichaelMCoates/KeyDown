@@ -171,7 +171,7 @@ class DomNodeCollection {
 
   append(arg) {
     if (arg instanceof HTMLElement) {
-      arg = $l(arg);
+      arg = $wis(arg);
     }
 
     if (typeof(arg) === "string") {

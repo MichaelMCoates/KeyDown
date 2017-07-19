@@ -53,6 +53,12 @@ const bottomRightKeys = {
 };
 
 const soundKeymap = $wis.extend(topLeftKeys, topRightKeys, bottomLeftKeys, bottomRightKeys);
+// 
+// for (var key in soundKeymap) {
+//   let audio = document.createElement("audio");
+//   audio.src = soundKeymap[key];
+//   $wis('head').append(audio);
+// }
 
 export function playSound(key) {
   new Howl({ src: [`${soundKeymap[key]}`]}).play();

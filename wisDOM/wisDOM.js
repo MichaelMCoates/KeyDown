@@ -115,7 +115,7 @@ $wis.ajax = (options) => {
       error: () => {},
     };
 
-    const newOptions = $l.extend(ajaxDefaults, options);
+    const newOptions = $wis.extend(ajaxDefaults, options);
     newOptions.method = newOptions.method.toUpperCase();
 
     if (newOptions.method === 'GET') {
@@ -368,7 +368,7 @@ class DomNodeCollection {
 
   append(arg) {
     if (arg instanceof HTMLElement) {
-      arg = $l(arg);
+      arg = $wis(arg);
     }
 
     if (typeof(arg) === "string") {
