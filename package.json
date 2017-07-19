@@ -4,7 +4,8 @@
   "description": "",
   "main": "touchtone.js",
   "scripts": {
-    "webpack": "webpack --watch"
+    "webpack": "webpack --watch",
+    "start": "node keydown.js"
   },
   "keywords": [],
   "author": "",
