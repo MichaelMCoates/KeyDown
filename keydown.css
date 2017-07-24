@@ -75,6 +75,14 @@ body {
   overflow-x: hidden;
 }
 
+.letters {
+  position: fixed;
+  top: 1vh;
+  margin: 0 auto;
+  text-align: center;
+  right: 50vw;
+}
+
 .color-01 { color: #FF1461; } /* Red */
 .color-02 { color: #FF7C72; } /* Orange */
 .color-03 { color: #FBF38C; } /* Yellow */

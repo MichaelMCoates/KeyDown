@@ -11,6 +11,7 @@ let pointerY = 0;
 let sectionColors = ['#FF1461', '#18FF92'];
 let centerX = window.innerWidth / 2;
 let centerY = window.innerHeight / 2;
+let letters = $wis('.letters');
 
 $wis('html').keydown(function(e) {
   console.log(e.key);
@@ -21,6 +22,10 @@ $wis('html').keydown(function(e) {
     animateParticules(pointerX, pointerY, sectionColors, numberOfParticules);
     playSound(key);
   }
+
+  let letter = document.createElement('div');
+  letter.innerHTML = key;
+  letters.append(letter);
 });
 
 let render = anime({

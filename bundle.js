@@ -149,6 +149,7 @@ var pointerY = 0;
 var sectionColors = ['#FF1461', '#18FF92'];
 var centerX = window.innerWidth / 2;
 var centerY = window.innerHeight / 2;
+var letters = $wis('.letters');
 
 $wis('html').keydown(function (e) {
   console.log(e.key);
@@ -159,6 +160,10 @@ $wis('html').keydown(function (e) {
     (0, _animation.animateParticules)(pointerX, pointerY, sectionColors, numberOfParticules);
     (0, _sounds.playSound)(key);
   }
+
+  var letter = document.createElement('div');
+  letter.innerHTML = key;
+  letters.append(letter);
 });
 
 var render = (0, _animejs2.default)({
