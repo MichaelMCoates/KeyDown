@@ -12,20 +12,25 @@ let sectionColors = ['#FF1461', '#18FF92'];
 let centerX = window.innerWidth / 2;
 let centerY = window.innerHeight / 2;
 let letters = $wis('.letters');
+let timeout;
 
 $wis('html').keydown(function(e) {
-  console.log(e.key);
   let key = e.key;
   if (keymap[key]) {
     render.play();
     setSection(key);
     animateParticules(pointerX, pointerY, sectionColors, numberOfParticules);
     playSound(key);
-  }
+    let letter = document.createElement('div');
+    letter.innerHTML = key;
+    letter.className = 'fade';
+    letters.append(letter);
+    if (timeout) {
+      clearTimeout(timeout);
+    }
 
-  let letter = document.createElement('div');
-  letter.innerHTML = key;
-  letters.append(letter);
+    timeout = setTimeout(letters.deleteInnerHTML.bind(letters), 500);
+  }
 });
 
 let render = anime({

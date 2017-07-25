@@ -11,7 +11,7 @@ span, article, footer, time, small {
   outline: 0;
   font: inherit;
   font-family: 'Roboto';
-  font-weight: 300;
+  font-weight: 400;
   color: inherit;
   text-align: inherit;
   text-decoration: inherit;
@@ -77,11 +77,41 @@ body {
 
 .letters {
   position: fixed;
-  top: 1vh;
-  margin: 0 auto;
+  top: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  right: 50vw;
+  text-transform: uppercase;
 }
+
+div.fade {
+    -webkit-animation: fade 0.2s;
+    animation: fade 0.2s;
+ }
+
+@-webkit-keyframes fade {
+    from {
+      opacity: 0;
+      margin-left: 100%;
+    }
+    to {
+      opacity: 1;
+      margin-left: 0%;
+
+    }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    margin-left: 100%;
+  }
+  to {
+    opacity: 1;
+    margin-left: 0%;
+  }
+}
+
 
 .color-01 { color: #FF1461; } /* Red */
 .color-02 { color: #FF7C72; } /* Orange */
