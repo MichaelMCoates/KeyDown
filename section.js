@@ -1,5 +1,5 @@
 import anime from 'animejs';
-const colors = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C', '#533A71', '#F79256', '#21897E', '#B7D3F2'];
+const colors = ['#FF1461', '#18FF92', '#5A87FF', '#2B2D42', '#8D99AE', '#C4F1BE', '#3C1642', '#086375', '#F433AB', '#EF6F6C', '#F8FFE5', '#2DE1C2'];
 
 export function setCoords(section) {
   let width = window.innerWidth;
@@ -26,13 +26,13 @@ export function setCoords(section) {
 export function setColors(section) {
   switch (section) {
     case "Top Left":
-      return colors.slice(0, 2);
+      return colors.slice(0, 3);
     case "Top Right":
-      return colors.slice(2, 4);
+      return colors.slice(3, 6);
     case "Bottom Left":
-      return colors.slice(4, 6);
+      return colors.slice(6, 9);
     case "Bottom Right":
-      return colors.slice(6, 8);
+      return colors.slice(9, 12);
     default:
       return null;
   }

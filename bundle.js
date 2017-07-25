@@ -288,7 +288,7 @@ var _animejs2 = _interopRequireDefault(_animejs);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var colors = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C', '#533A71', '#F79256', '#21897E', '#B7D3F2'];
+var colors = ['#FF1461', '#18FF92', '#5A87FF', '#2B2D42', '#8D99AE', '#C4F1BE', '#3C1642', '#086375', '#F433AB', '#EF6F6C', '#F8FFE5', '#2DE1C2'];
 
 function setCoords(section) {
   var width = window.innerWidth;
@@ -315,13 +315,13 @@ function setCoords(section) {
 function setColors(section) {
   switch (section) {
     case "Top Left":
-      return colors.slice(0, 2);
+      return colors.slice(0, 3);
     case "Top Right":
-      return colors.slice(2, 4);
+      return colors.slice(3, 6);
     case "Bottom Left":
-      return colors.slice(4, 6);
+      return colors.slice(6, 9);
     case "Bottom Right":
-      return colors.slice(6, 8);
+      return colors.slice(9, 12);
     default:
       return null;
   }
@@ -367,7 +367,7 @@ function animateParticules(x, y, sectionColors, numberOfParticules) {
     update: renderParticule
   }).add({
     targets: circle,
-    radius: _animejs2.default.random(80, 160),
+    radius: _animejs2.default.random(100, 200),
     lineWidth: 0,
     alpha: {
       value: 0,
@@ -421,7 +421,7 @@ function createParticule(x, y, sectionColors) {
 
 function setParticuleDirection(p) {
   var angle = _animejs2.default.random(0, 360) * Math.PI / 180;
-  var value = _animejs2.default.random(50, 180);
+  var value = _animejs2.default.random(75, 225);
   var radius = [-1, 1][_animejs2.default.random(0, 1)] * value;
   return {
     x: p.x + radius * Math.cos(angle),
