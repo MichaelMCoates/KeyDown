@@ -112,6 +112,10 @@ div.fade {
   }
 }
 
+.mobile {
+  position: fixed;
+}
+
 
 .color-01 { color: #FF1461; } /* Red */
 .color-02 { color: #FF7C72; } /* Orange */
