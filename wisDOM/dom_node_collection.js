@@ -101,14 +101,17 @@ class DomNodeCollection {
 
 // Event Listeners
 
+  keydown(callback) {
+    this.on('keydown', callback);
+  }
+
   on(eventType, callback) {
     const eventStore = `wisDOM-eventStore-${eventType}`;
 
     this.each((node) => {
       node.addEventListener(eventType, callback);
-      console.log(node);
 
-      if (node[eventStore] === "undefined") {
+      if (node[eventStore] === undefined) {
         node[eventStore] = [];
       }
 
