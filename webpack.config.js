@@ -1,7 +1,7 @@
 const path = require('path');
 module.exports = {
   context: __dirname,
-  entry: './keydown.js',
+  entry: './lib/keydown.js',
   output: {
     path: path.resolve(__dirname),
     filename: 'bundle.js'

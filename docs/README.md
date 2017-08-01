@@ -2,7 +2,15 @@
 
 [Keydown Live Link][keydown]
 
+## Summary
+
 KeyDown is a music-making application built with Anime.js and [wisDOM][wisdom], a JavaScript DOM Manipulation library that I created. It was created to serve as a live demo of wisDOM's functionality.
+
+<div align="center">
+  <img src="./docs/images/keydown.gif">
+</div>
+
+<br>
 
 ## How To Use KeyDown
 
